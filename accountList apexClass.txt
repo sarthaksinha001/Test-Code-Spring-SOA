@@ -1,0 +1,8 @@
+public class fetchAccount {
+    
+    @AuraEnabled
+    public static List<Account> getAccountRecord()
+   {
+        return new List<Account>([Select id,Name,Phone, CreatedDate from Account order by createdDate DESC limit 10]);
+    }
+}
